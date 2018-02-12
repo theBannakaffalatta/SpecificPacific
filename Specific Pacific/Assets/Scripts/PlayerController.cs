@@ -11,8 +11,6 @@ public class PlayerController : MonoBehaviour
     public float RunningSpeed;
     public float CrouchingSpeed;
 
-
-
     private Rigidbody rb;
     public bool grounded;
 
@@ -49,7 +47,6 @@ public class PlayerController : MonoBehaviour
         {
             HorizontalSpeed = CrouchingSpeed;
             VerticalSpeed = CrouchingSpeed;
-
         }
 
         else
