@@ -429,7 +429,7 @@ GameObject:
   - component: {fileID: 187834393}
   - component: {fileID: 187834392}
   m_Layer: 0
-  m_Name: Bonfire
+  m_Name: SoundBonfire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
