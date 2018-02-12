@@ -7,6 +7,9 @@ public class PlayerController : MonoBehaviour
     public float VerticalSpeed;
     public float jumpForce;
 
+    public float WalkingSpeed;
+    public float RunningSpeed;
+
     private Rigidbody rb;
     public bool grounded;
 
@@ -33,6 +36,17 @@ public class PlayerController : MonoBehaviour
         var z = Input.GetAxis("Vertical") * Time.deltaTime * VerticalSpeed;
 
         transform.Translate(x, 0, z);
+
+        if (Input.GetKey("left shift"))
+        {
+            VerticalSpeed = RunningSpeed;
+        }
+
+        else
+        {
+            HorizontalSpeed = WalkingSpeed;
+            VerticalSpeed = WalkingSpeed;
+        }
 
         if (Input.GetButtonDown("Jump") && grounded)
         {
