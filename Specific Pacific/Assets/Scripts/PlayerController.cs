@@ -5,6 +5,27 @@ public class PlayerController : MonoBehaviour
 
     public float HorizontalSpeed;
     public float VerticalSpeed;
+    public float jumpForce;
+
+    private Rigidbody rb;
+    public bool grounded;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+        grounded = false;
+    }
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        grounded = true;
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        grounded = false;
+    }
 
     void Update()
     {
@@ -12,5 +33,12 @@ public class PlayerController : MonoBehaviour
         var z = Input.GetAxis("Vertical") * Time.deltaTime * VerticalSpeed;
 
         transform.Translate(x, 0, z);
+
+        if (Input.GetButtonDown("Jump") && grounded)
+        {
+            rb.AddForce(Vector3.up * jumpForce);
+            grounded = false;
+            Debug.Log("Jump");
+        }
     }
 }
