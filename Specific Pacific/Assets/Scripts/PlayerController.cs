@@ -9,6 +9,9 @@ public class PlayerController : MonoBehaviour
 
     public float WalkingSpeed;
     public float RunningSpeed;
+    public float CrouchingSpeed;
+
+
 
     private Rigidbody rb;
     public bool grounded;
@@ -40,6 +43,13 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey("left shift"))
         {
             VerticalSpeed = RunningSpeed;
+        }
+
+        else if (Input.GetKey("left ctrl"))
+        {
+            HorizontalSpeed = CrouchingSpeed;
+            VerticalSpeed = CrouchingSpeed;
+
         }
 
         else
