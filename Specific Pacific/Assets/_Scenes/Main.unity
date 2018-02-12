@@ -279,6 +279,8 @@ MonoBehaviour:
   HorizontalSpeed: 5
   VerticalSpeed: 5
   jumpForce: 175
+  WalkingSpeed: 5
+  RunningSpeed: 15
   grounded: 1
 --- !u!1 &832363074
 GameObject:
