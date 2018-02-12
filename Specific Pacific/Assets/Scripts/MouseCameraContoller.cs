@@ -12,7 +12,7 @@ public class MouseCameraContoller : MonoBehaviour
 
     void Awake()
     {
-        
+        Cursor.visible = false;
         _player = transform.parent.gameObject;
     }
 
